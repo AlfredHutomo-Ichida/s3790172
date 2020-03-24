@@ -1,21 +1,59 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" >
-<head>
+    <head>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <title>Alfred's Home Page</title>
-</head>
+    <title>Alfred's Website</title>
+    </head>
 <body>
-  <div class="w3-container w3-grey w3-center">
-    <h1>Welcome to my website</h1>
-  </div>
-  <div>
-    <img src="Alfred.jpg" class="w3-round" alt="Alfred" style="width:20%">
-  </div>
-  <div class="w3-container">
-    <h2> Personal Information</h2>
-        <p>Hi! My name is Alfred. I was born in Jakarta on the 3rd of July 1999. My nationality is Indonesia, which is my native language as well. However, I enjoy speaking in English, since I came to Melbourne as an International student. Currently, I am doing my first year of  Bachelor degree in Information Technology at RMIT University and completed my Diploma of Engineering last year at Monash University. What makes me choose this major is related to my hobby, which is playing computer games that are competitive multiplayer games for example Dota2 and Rainbow six siege. One interesting fact about me is, I also enjoy cooking Western and Japanese cuisine, especially in my leisure time. I was inspired by an animation movie, called Ratatouille. This movie tells how a provincial rat has a wonderful sense of smell, discovers real food and the cooking of a five-star chef.</p>
-  </div>
-</body>
+    <div class="w3-container w3-grey">
+        <h1>Welcome to my website</h1>
+    </div>
+    <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width: 130px">
+        <h5 class="w3-bar-item">Menu</h5>
+        <button class="w3-bar-item w3-button tablink" onclick="openInfo(event, 'Personal')">Personal Information
+        </button>
+        <button class="w3-bar-item w3-button tablink" onclick="openInfo(event,'Interest')">Interest in IT
+        </button>
+        <button class="w3-bar-item w3-button tablink" onclick="openInfo(event,'Job')">Ideal job
+        </button>
+        <button class="w3-bar-item w3-button tablink" onclick="openInfo(event,'Profile')">Profile
+        </button>
+        <button class="w3-bar-item w3-button tablink" onclick="openInfo(event,'Project')">Project Idea
+        </button>
+    </div>
+    <div style="margin-left: 130px">
+        <div class="w3-padding"></div>
+        <div id="Personal" class="w3-container info" style="display:none ">
+            <img src="Alfred.jpg" class="w3-padding" alt="Alfred" style="width:300px;float: left;margin-top: 25px;mar">
+            <h2><b>Personal Information</b></h2>
+            <ul>
+                <li style="margin-left: 280px">Name: Alfred Louise Hutomo</li>
+                <li style="margin-left: 280px">StudentID: 3790172</li>
+                <li style="margin-left: 280px">Email: s3790172@student.rmit.edu.au</li>
+            </ul>
+            <p>Hi! My name is Alfred. I was born in Jakarta on the 3rd of July 1999. My nationality is Indonesia, which is my native language as well. However, I enjoy speaking in English, since I came to Melbourne as an International student. Currently, I am doing my first year of  Bachelor degree in Information Technology at RMIT University and completed my Diploma of Engineering last year at Monash University. What makes me choose this major is related to my hobby, which is playing computer games that are competitive multiplayer games for example Dota2 and Rainbow six siege. One interesting fact about me is, I also enjoy cooking Western and Japanese cuisine, especially in my leisure time. I was inspired by an animation movie, called Ratatouille. This movie tells how a provincial rat has a wonderful sense of smell, discovers real food and the cooking of a five-star chef.
+            </p>
+        </div>
+        <div>
+        </div>
+    </div>
+    <script>
+        function openInfo(evt, sectionName) {
+            var i, x, tablinks;
+            x = document.getElementsByClassName("info");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i< x.length; i++){
+                tablinks[i].className = tablinks[i].className.replace(" w3-blue", "");
+            }
+            document.getElementById(sectionName).style.display = "block";
+            evt.currentTarget.className += " w3-blue";
+        }
+        
     
+    </script>
+</body>
 </html>
 
